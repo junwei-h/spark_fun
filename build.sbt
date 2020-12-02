@@ -2,7 +2,7 @@ lazy val root = (project in file(".")).
 	settings(
     name := "sparkfun",
     version := "1.0",
-    scalaVersion := "2.12.12",
+    scalaVersion := "2.11.12",
     organization := "com",
 
     mainClass in (Compile, packageBin) := Some("com.sparkfun.Main"),
@@ -23,7 +23,7 @@ lazy val root = (project in file(".")).
 
     assemblyExcludedJars in assembly := {
 		val cp = (fullClasspath in assembly).value
-		val excludes = Seq("scala-library-2.12.12.jar")
+		val excludes = Seq("scala-library-2.11.12.jar")
 		cp filter {a=> excludes contains a.data.getName}
 	}
 )

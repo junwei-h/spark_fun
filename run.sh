@@ -9,4 +9,4 @@ spark-submit \
 --conf spark.shuffle.service.enabled=true \
 --conf spark.dynamicAllocation.enabled=true \
 --conf spark.executor.heartbeatInterval=20 \
-./target/scala-2.12/sparkfun.jar > test.out 2>&1&
+./target/scala-2.11/sparkfun.jar > test.out 2>&1&
