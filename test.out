@@ -1,0 +1,125 @@
+Using properties file: /home/junwei/Downloads/spark-2.4.7-bin-hadoop2.7/conf/spark-defaults.conf
+2020-11-30 09:25:52 WARN  Utils:66 - Your hostname, junwei-Studio resolves to a loopback address: 127.0.1.1; using 192.168.1.110 instead (on interface enp5s0)
+2020-11-30 09:25:52 WARN  Utils:66 - Set SPARK_LOCAL_IP if you need to bind to another address
+Adding default property: spark.eventLog.dir=file:/opt/spark-events
+Adding default property: spark.eventLog.enabled=true
+Adding default property: spark.history.fs.logDirectory=file:/opt/spark-events
+Parsed arguments:
+  master                  local[6]
+  deployMode              null
+  executorMemory          null
+  executorCores           null
+  totalExecutorCores      null
+  propertiesFile          /home/junwei/Downloads/spark-2.4.7-bin-hadoop2.7/conf/spark-defaults.conf
+  driverMemory            null
+  driverCores             null
+  driverExtraClassPath    null
+  driverExtraLibraryPath  null
+  driverExtraJavaOptions  -Dlog4j.configuration=file:/home/junwei/Dropbox/FromDropbox/MOOC/SparkML/log4j.properties
+  supervise               false
+  queue                   null
+  numExecutors            null
+  files                   file:/home/junwei/Dropbox/FromDropbox/MOOC/SparkML/./log4j.properties
+  pyFiles                 null
+  archives                null
+  mainClass               com.mltest.Main
+  primaryResource         file:/home/junwei/Dropbox/FromDropbox/MOOC/SparkML/./target/scala-2.11/mltest.jar
+  name                    com.mltest.Main
+  childArgs               []
+  jars                    null
+  packages                null
+  packagesExclusions      null
+  repositories            null
+  verbose                 true
+
+Spark properties used, including those specified through
+ --conf and those from the properties file /home/junwei/Downloads/spark-2.4.7-bin-hadoop2.7/conf/spark-defaults.conf:
+  (spark.eventLog.enabled,true)
+  (spark.history.fs.logDirectory,file:/opt/spark-events)
+  (spark.shuffle.service.enabled,true)
+  (spark.driver.extraJavaOptions,-Dlog4j.configuration=file:/home/junwei/Dropbox/FromDropbox/MOOC/SparkML/log4j.properties)
+  (spark.executor.heartbeatInterval,20)
+  (spark.eventLog.dir,file:/opt/spark-events)
+  (spark.dynamicAllocation.enabled,true)
+
+    
+2020-11-30 09:25:53 WARN  NativeCodeLoader:62 - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Main class:
+com.mltest.Main
+Arguments:
+
+Spark config:
+(spark.history.fs.logDirectory,file:/opt/spark-events)
+(spark.eventLog.enabled,true)
+(spark.executor.heartbeatInterval,20)
+(spark.shuffle.service.enabled,true)
+(spark.jars,file:/home/junwei/Dropbox/FromDropbox/MOOC/SparkML/./target/scala-2.11/mltest.jar)
+(spark.app.name,com.mltest.Main)
+(spark.files,file:///home/junwei/Dropbox/FromDropbox/MOOC/SparkML/log4j.properties)
+(spark.driver.extraJavaOptions,-Dlog4j.configuration=file:/home/junwei/Dropbox/FromDropbox/MOOC/SparkML/log4j.properties)
+(spark.submit.deployMode,client)
+(spark.master,local[6])
+(spark.eventLog.dir,file:/opt/spark-events)
+(spark.dynamicAllocation.enabled,true)
+Classpath elements:
+file:/home/junwei/Dropbox/FromDropbox/MOOC/SparkML/./target/scala-2.11/mltest.jar
+
+
+2020-11-30 09:25:55 ERROR Inbox:91 - Ignoring error
+java.lang.NullPointerException
+	at org.apache.spark.storage.BlockManagerMasterEndpoint.org$apache$spark$storage$BlockManagerMasterEndpoint$$register(BlockManagerMasterEndpoint.scala:364)
+	at org.apache.spark.storage.BlockManagerMasterEndpoint$$anonfun$receiveAndReply$1.applyOrElse(BlockManagerMasterEndpoint.scala:77)
+	at org.apache.spark.rpc.netty.Inbox$$anonfun$process$1.apply$mcV$sp(Inbox.scala:105)
+	at org.apache.spark.rpc.netty.Inbox.safelyCall(Inbox.scala:205)
+	at org.apache.spark.rpc.netty.Inbox.process(Inbox.scala:101)
+	at org.apache.spark.rpc.netty.Dispatcher$MessageLoop.run(Dispatcher.scala:221)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
++-------+------+
+|nevents|count |
++-------+------+
+|null   |159278|
+|1      |26056 |
+|2      |13768 |
+|3      |7567  |
+|4      |5992  |
+|5      |5189  |
+|6      |4318  |
+|7      |3676  |
+|8      |3508  |
+|9      |3192  |
+|10     |2949  |
+|11     |2655  |
+|12     |2551  |
+|13     |2208  |
+|14     |2070  |
+|15     |1912  |
+|16     |1858  |
+|17     |1731  |
+|18     |1587  |
+|19     |1471  |
++-------+------+
+only showing top 20 rows
+
+Confusion matrix:
+99470.0  265.0  
+1176.0   797.0  
+Precision(0.0) = 0.9883154819863681
+Precision(1.0) = 0.7504708097928436
+Recall(0.0) = 0.9973429588409285
+Recall(1.0) = 0.40395337050177393
+FPR(0.0) = 0.5960466294982261
+FPR(1.0) = 0.0026570411590715395
+F1-Score(0.0) = 0.9928086994275905
+F1-Score(1.0) = 0.5252059308072488
+Threshold: 1.0, Precision: 0.7504708097928436
+Threshold: 0.0, Precision: 0.01939867070436937
+Threshold: 1.0, Recall: 0.40395337050177393
+Threshold: 0.0, Recall: 1.0
+Threshold: 0.0, F-score: 0.03805904649839411, Beta = 1
+Threshold: 1.0, F-score: 0.5252059308072488, Beta = 1
+Threshold: 0.0, F-score: 0.03805904649839411, Beta = 0.5
+Threshold: 1.0, F-score: 0.5252059308072488, Beta = 0.5
+Area under precision-recall curve = 0.532594267580972
+Area under ROC = 0.7006481646713512
